@@ -1,3 +1,5 @@
+export const listEndPoint = `${process.env.REACT_APP_LIST_API_URL}${process.env.REACT_APP_STOCKS_API_KEY}`;
+
 const STOCKS_FILTERS = {
   PRICE: [
     '<100',
