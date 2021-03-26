@@ -5,7 +5,6 @@ const Navbar = () => (
     <h2><Link to="/">StocksCatalogue</Link></h2>
     <div className="links">
       <Link to="/">Home</Link>
-      <Link to="/stocks/:id">Details</Link>
     </div>
   </nav>
 );
