@@ -19,60 +19,81 @@ const StockDetails = () => {
     <section className="stock-details">
       { data && (
         <>
-          <h2>{data[0].companyName}</h2>
-          <p>{data[0].description}</p>
+          { data[0].companyName && <h2>{data[0].companyName}</h2> }
+          { data[0].description && <p>{data[0].description}</p> }
           <div>
             <h3>Stock details</h3>
+            {data[0].exchange && (
             <h1>
               Exchange:
               {' '}
               {data[0].exchange}
             </h1>
+            )}
+            {data[0].price && (
             <h3>
               Price:
               {' '}
               {data[0].price}
             </h3>
+            )}
+            {data[0].range && (
             <h3>
               Price Range:
               {' '}
               {data[0].range}
             </h3>
+            )}
+            { data[0].sector && (
             <h4>
               Sector:
               {' '}
-              {data[0].sector}
+              {data[0].sector }
             </h4>
+            )}
+            {data[0].industry && (
             <h4>
               Industry:
               {' '}
-              {data[0].industry}
+              {data[0].industry && data[0].industry}
             </h4>
+            )}
+            { data[0].website && (
             <h5>
               Website:
               {data[0].website}
             </h5>
+            ) }
+            {data[0].symbol && (
             <h6>
               Symbol:
               {' '}
               {data[0].symbol}
             </h6>
+            )}
+            {data[0].currency && (
             <h5>
               Currency:
               {' '}
               {data[0].currency}
             </h5>
+            )}
+            {data[0].country && (
             <h5>
               Country:
               {' '}
               {data[0].country}
             </h5>
+            )}
+            {data[0].isin && (
             <h5>
               ISIN:
               {' '}
               {data[0].isin}
             </h5>
-            <img src={data[0].image} alt="profile-icon" style={{ width: 100, height: 100 }} />
+            )}
+            {data[0].image
+              && <img src={data[0].image} alt="profile-icon" style={{ width: 100, height: 100 }} />}
           </div>
           This is gonna have the details of each stock (Defines the layout)
         </>
