@@ -24,7 +24,7 @@ const StocksFilter = () => {
               onChange={e => setFilter(e.target.options[e.target.selectedIndex].value)}
               key={`stck-${key}`}
             >
-              <option value="default" disabled>
+              <option value="default">
                 Select:
                 {' '}
                 {key}
