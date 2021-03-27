@@ -26,12 +26,14 @@ const StockList = () => {
   return (
     <>
       <StocksFilter />
-      <h2>Stock List</h2>
-      { stocks && renderFilteredStocks.slice(0, 99).map(stock => (
-        <article key={`stck-${stock.symbol}`}>
-          <Stock stock={stock} />
-        </article>
-      ))}
+      <section className="stock-list">
+        <h2>Stock List</h2>
+        { stocks && renderFilteredStocks.slice(0, 99).map(stock => (
+          <article key={`stck-${stock.symbol}`}>
+            <Stock stock={stock} />
+          </article>
+        ))}
+      </section>
       <p>Would be better if we can have pagination</p>
     </>
   );
