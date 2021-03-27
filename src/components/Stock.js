@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Stock = ({ stock }) => (
   <>
-    <div className="company-im">
+    <div className="company-img">
       Co. image
     </div>
     <div className="stock-stats">
@@ -16,7 +16,7 @@ const Stock = ({ stock }) => (
       { stock.exchange }
       <br />
     </div>
-    <Link to="/stocks/:id">Details</Link>
+    <Link to={`/stocks/${stock.symbol}`}>Details</Link>
   </>
 );
 
