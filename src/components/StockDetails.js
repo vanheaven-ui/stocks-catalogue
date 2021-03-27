@@ -12,7 +12,7 @@ const StockDetails = () => {
   // useFetch(`${profileEndPoint}/${symbol}?apikey=${process.env.REACT_APP_STOCKS_API_KEY}`);
   // localStorage.setItem('profile', JSON.stringify(data));
   // console.log(data);
-  const data = localStorage.getItem('profile');
+  const data = JSON.parse(localStorage.getItem('profile'));
   dispatch(getProfile(data));
 
   return (
