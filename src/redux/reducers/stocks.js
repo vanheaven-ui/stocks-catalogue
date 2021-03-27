@@ -1,7 +1,8 @@
-import { GET_STOCK_LIST } from '../actionTypes';
+import { GET_PROFILE, GET_STOCK_LIST } from '../actionTypes';
 
 const initState = {
   stocks: [],
+  profiles: [],
 };
 
 const stocksReducer = (state = initState, action) => {
@@ -10,6 +11,11 @@ const stocksReducer = (state = initState, action) => {
       return {
         ...state,
         stocks: action.payload,
+      };
+    case GET_PROFILE:
+      return {
+        ...state,
+        profiles: action.payload,
       };
     default:
       return state;
