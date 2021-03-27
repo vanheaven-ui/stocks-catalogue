@@ -1,5 +1,5 @@
-const getStocksByPrice = (stocks, priceRange) => (
-  stocks.filter(stock => {
+const getStocksByPrice = (stocks, priceRange) => {
+  const filteredStockPrice = stocks ? (stocks.filter(stock => {
     switch (priceRange) {
       case '<100':
         return stock.price < 100;
@@ -16,7 +16,9 @@ const getStocksByPrice = (stocks, priceRange) => (
       default:
         return null;
     }
-  })
-);
+  })) : null;
+  const ascending = filteredStockPrice.sort((a, b) => a.price - b.price);
+  return ascending;
+};
 
 export default getStocksByPrice;
