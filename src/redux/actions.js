@@ -1,4 +1,4 @@
-import { CHANGE_FILTER, GET_STOCK_LIST } from './actionTypes';
+import { CHANGE_FILTER, GET_PROFILE, GET_STOCK_LIST } from './actionTypes';
 
 const getStockList = stocks => ({
   type: GET_STOCK_LIST,
@@ -10,4 +10,9 @@ const changeFilter = filter => ({
   filter,
 });
 
-export { getStockList, changeFilter };
+const getProfile = profile => ({
+  type: GET_PROFILE,
+  payload: profile,
+});
+
+export { getStockList, changeFilter, getProfile };
