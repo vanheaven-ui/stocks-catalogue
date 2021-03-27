@@ -8,10 +8,10 @@ const useFetch = url => {
   useEffect(() => { // for every component render, this function is executed where called.
     const abortCont = new AbortController();
     setIsloading(true);
-    fetch(url, { signal: abortCont.signal })
+    fetch(url, { mode: 'cors', signal: abortCont.signal })
       .then(res => {
         if (!res.ok) {
-          throw Error('Could not load stocks, please check and try again!')
+          throw Error('Could not load stocks, please check and try again!');
         }
         return res.json();
       })
