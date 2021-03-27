@@ -1,25 +1,33 @@
 import { useDispatch, useSelector } from 'react-redux';
-import useFetch from '../common/hooks/useFetch';
-import { listEndPoint } from '../constants';
+// import PropTypes from 'prop-types';
+// import useFetch from '../common/hooks/useFetch';
+// import { listEndPoint } from '../constants';
 import { getStockList } from '../redux/actions';
+import getStocksByPrice from '../redux/selectors';
+// import ApiHandler from '../utils/apiHandler';
 import Stock from './Stock';
 import StocksFilter from './StockFilter';
 
 const StockList = () => {
   const dispatch = useDispatch();
-  const { data: stocks } = useFetch(listEndPoint);
+  // const { data } = useFetch(listEndPoint);
+  const stocks = JSON.parse(localStorage.getItem('stocks'));
   dispatch(getStockList(stocks));
-  const { filter } = useSelector(state => state.filter.filter);
-  console.log(filter);
+  // localStorage.setItem('stocks', JSON.stringify(data));
+  const filter = useSelector(state => state.filter.filter);
 
-  // const renderFilteredStocks = () => {
+  // get profiles;
 
-  // }
+  const renderFilteredStocks = (() => {
+    const filtered = filter === 'All' ? stocks : getStocksByPrice(stocks, filter);
+    return filtered;
+  })();
+
   return (
     <>
       <StocksFilter />
       <h2>Stock List</h2>
-      { stocks && stocks.slice(0, 100).map(stock => (
+      { stocks && renderFilteredStocks.slice(0, 99).map(stock => (
         <article key={`stck-${stock.symbol}`}>
           <Stock stock={stock} />
         </article>
