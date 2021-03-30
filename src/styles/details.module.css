@@ -22,13 +22,13 @@
 
 .price {
   border-radius: 50%;
-    border: 1px solid #fff;
-    height: 150px;
-    background-color: orange;
-    font-weight: 900;
-    text-align: center;
-    align-items: center;
-    line-height: 60px;
+  border: 1px solid #fff;
+  height: 150px;
+  background-color: orange;
+  font-weight: 900;
+  text-align: center;
+  align-items: center;
+  line-height: 60px;
 }
 
 .priceDiv {

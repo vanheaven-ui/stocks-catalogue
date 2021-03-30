@@ -5,9 +5,6 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-}
-
-.myClass {
   color: blueviolet;
 }
 
@@ -21,11 +18,11 @@
   color: blueviolet;
 }
 
+.myActive a {
+  background-color: blueviolet;
+}
+
 .myClass a:hover {
   background-color: blueviolet;
   color: #fff;
-}
-
-.myActive a {
-  background-color: blueviolet;
 }
