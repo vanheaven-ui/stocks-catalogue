@@ -2,9 +2,9 @@ import {
   Card, Col, Container, Row,
 } from 'react-bootstrap';
 import Hero from '../Hero';
-import StockList from '../StockList';
 import heroBar from '../../images/hero-bar.png';
 import IntroAlert from '../IntroAlert';
+import StockList from '../../containers/StockList';
 
 const Home = () => (
   <>
