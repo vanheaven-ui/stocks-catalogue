@@ -1,6 +1,7 @@
 import { PropTypes } from 'prop-types';
 import { Badge, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import styles from '../styles/stock.module.css';
 
 const Stock = ({ stock }) => (
   <>
@@ -18,12 +19,12 @@ const Stock = ({ stock }) => (
         { stock.price }
       </h2>
     </div>
-    <div className="stock-footer">
+    <div className={styles.stockFooter}>
       <Button
         variant="outline-primary"
-        style={{ backgroundColor: '#007bff', color: '#fff' }}
+        style={{ backgroundColor: '#007bff' }}
       >
-        <Link to={`/stocks/${stock.symbol}`}>Details</Link>
+        <Link to={`/stocks/${stock.symbol}`} style={{ color: '#fff' }}>Details</Link>
       </Button>
       <div className="exchange">
         <small style={{ color: '#d1450d' }}>Trading on:</small>
