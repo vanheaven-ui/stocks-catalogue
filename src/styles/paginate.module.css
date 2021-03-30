@@ -1,0 +1,31 @@
+.myClass {
+  display: flex;
+  height: 40px;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.myClass {
+  color: blueviolet;
+}
+
+.myClass a {
+  border-radius: 5px;
+  border: 1px solid blueviolet;
+  cursor: pointer;
+  padding: 3px 12px;
+  background-color: #fff;
+  margin: 0 10px;
+  color: blueviolet;
+}
+
+.myClass a:hover {
+  background-color: blueviolet;
+  color: #fff;
+}
+
+.myActive a {
+  background-color: blueviolet;
+}
