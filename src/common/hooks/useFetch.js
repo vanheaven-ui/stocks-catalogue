@@ -5,7 +5,7 @@ const useFetch = url => {
   const [isLoading, setIsloading] = useState(false);
   const [err, setErr] = useState(null);
 
-  useEffect(() => { // for every component render, this function is executed where called.
+  useEffect(() => {
     const abortCont = new AbortController();
     setIsloading(true);
     fetch(url, { mode: 'cors', signal: abortCont.signal })
@@ -22,13 +22,18 @@ const useFetch = url => {
       })
       .catch(err => {
         if (err.name === 'AbortError') {
-          console.log(err.message);
+          setTimeout(() => {
+            const alert = document.createElement('div');
+            alert.innerHTML = err.message;
+            document.body.insertAdjacentElement('afterbegin', alert);
+          }, 1000);
         }
         setErr(err.message);
         setIsloading(false);
       });
     return () => abortCont.abort();
   }, [url]);
+
   return { data, isLoading, err };
 };
 
