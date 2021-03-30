@@ -21,4 +21,28 @@ const getStocksByPrice = (stocks, priceRange) => {
   return ascending;
 };
 
-export default getStocksByPrice;
+const filterByExchange = (stocks, exchange) => {
+  const filteredStocks = stocks ? (stocks.filter(stock => {
+    switch (exchange) {
+      case 'New York Stock Exchange Arca':
+        return stock.exchange === 'New York Stock Exchange Arca';
+      case 'Nasdaq Global Select':
+        return stock.exchange === 'Nasdaq Global Select';
+      case 'New York Stock Exchange':
+        return stock.exchange === 'New York Stock Exchange';
+      case 'Nasdaq Global Market':
+        return stock.exchange === 'Nasdaq Global Market';
+      case 'Nasdaq Capital Market':
+        return stock.exchange === 'Nasdaq Capital Market';
+      case 'BATS Exchange':
+        return stock.exchange === 'BATS Exchange';
+      case 'NYSE American':
+        return stock.exchange === 'NYSE American';
+      default:
+        return null;
+    }
+  })) : null;
+  return filteredStocks;
+};
+
+export { getStocksByPrice, filterByExchange };
