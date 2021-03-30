@@ -1,4 +1,4 @@
-import StockDetails from '../StockDetails';
+import StockDetails from '../../containers/StockDetails';
 
 const Details = () => (
   <>
