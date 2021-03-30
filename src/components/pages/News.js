@@ -32,7 +32,7 @@ const News = () => {
                     {item.site}
                   </h4>
                   )}
-                  {item.url && <a href={item.url}>Source Url</a>}
+                  {item.url && <a href={item.url} target="_blank" rel="noreferrer">Source Url</a>}
                 </div>
                 <div className="news-img">
                   {item.image && <img src={item.image} alt="news-hero" className="w-100" /> }
