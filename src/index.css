@@ -11,3 +11,64 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+body {
+  background-color: #270221;
+  padding-bottom: 30px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+nav {
+  background-color: azure;
+  box-shadow: 3px 2px 6px rgb(0 123 255);
+}
+
+/* Home */
+
+.filters {
+  padding: 16px 20px;
+}
+
+.filters > select {
+  margin-right: 16px;
+  border-radius: 5px;
+}
+
+.filters > button {
+  background-color: #d1450d;
+  color: #f1f1e2;
+  outline: none;
+  border: none;
+  padding: 0 12px;
+  transition: all 0.5s linear;
+  border-radius: 10px;
+}
+
+.filters > button:hover {
+  background-color: #fff;
+  color: #d1450d;
+  border: 1px solid #d1450d;
+
+}
+
+.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+@keyframes breathe {
+  from {
+    box-shadow: 1px 2px 3px #fff;
+  }
+
+  to {
+    box-shadow: none;
+  }
+}
+
+.stock-preview button {
+  animation: 1s infinite alternate breathe;
+}
