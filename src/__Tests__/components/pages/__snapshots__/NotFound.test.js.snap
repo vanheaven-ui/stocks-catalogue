@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFound page doesnot change unexpectedly 1`] = `
+<section
+  className="not-found"
+  id="404"
+  style={
+    Object {
+      "color": "#fff",
+    }
+  }
+>
+  404 Page is not found
+  <a
+    href="/"
+    onClick={[Function]}
+  >
+    <span
+      aria-labelledby="404"
+      role="img"
+    >
+      🏠 Go Home
+    </span>
+  </a>
+</section>
+`;

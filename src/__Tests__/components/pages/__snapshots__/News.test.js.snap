@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFound page doesnot change unexpectedly 1`] = `
+<section
+  className="news"
+>
+  <div
+    className="container"
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "textAlign": "center",
+      }
+    }
+  />
+</section>
+`;
