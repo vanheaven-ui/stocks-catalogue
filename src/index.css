@@ -53,9 +53,10 @@ nav {
   color: #f1f1e2;
   outline: none;
   border: none;
-  padding: 0 12px;
+  padding: 2px 12px;
   transition: all 0.5s linear;
   border-radius: 10px;
+  border: 1px solid #fff;
 }
 
 .stock-preview button {
