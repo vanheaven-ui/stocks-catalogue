@@ -1,17 +1,16 @@
 import { useDispatch, useSelector } from 'react-redux';
-// import PropTypes from 'prop-types';
-// import useFetch from '../common/hooks/useFetch';
-// import { listEndPoint } from '../constants';
 import Container from 'react-bootstrap/Container';
 import { Col, Row } from 'react-bootstrap';
 import { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import { getStockList } from '../redux/actions';
 import StocksFilter from './StockFilter';
-import STOCKS_FILTERS from '../constants';
+import useFetch from '../common/hooks/useFetch';
+import STOCKS_FILTERS, { listEndPoint } from '../constants';
 import { filterByExchange, getStocksByPrice } from '../redux/selectors';
 import Stock from '../components/Stock';
 import styles from '../styles/paginate.module.css';
+import Loading from '../components/Loading';
 
 const StockList = () => {
   // variables for pagination
@@ -20,10 +19,12 @@ const StockList = () => {
   const stocksDisplayed = pageNumber * stocksPerPage;
 
   const dispatch = useDispatch();
-  // const { data } = useFetch(listEndPoint);
+  const { data, isLoading } = useFetch(listEndPoint);
+  if (data) {
+    localStorage.setItem('stocks', JSON.stringify(data));
+  }
   const stocks = JSON.parse(localStorage.getItem('stocks'));
   dispatch(getStockList(stocks));
-  // localStorage.setItem('stocks', JSON.stringify(data));
   const filter = useSelector(state => state.filter.filter);
 
   const exchanges = stocks ? stocks.slice(0, 1000).map(stock => stock.exchange) : null;
@@ -50,35 +51,38 @@ const StockList = () => {
   };
 
   return (
-    <>
-      <section className="stock-list">
-        <Container fluid style={{ backgroundColor: '#00800080', padding: 0 }}>
-          <StocksFilter />
-          <Row className="px-2">
-            { stocks && displayStocksPerPage.map(stock => (
-              <Col sm={12} md={6} lg={3} key={`stck-${stock.symbol}`} className="px-2">
-                <article
-                  className="stock-preview"
-                  style={{ backgroundColor: '#ffffffe6', margin: '10px 0', borderRadius: 10 }}
-                >
-                  <Stock stock={stock} />
-                </article>
-              </Col>
-            ))}
-          </Row>
-          <ReactPaginate
-            previousLabel="PREV"
-            nextLabel="NEXT"
-            pageCount={pageCount}
-            onPageChange={pageChange}
-            containerClassName={styles.myClass}
-            previousLinkClassName={styles.prev}
-            nextLinkClassName={styles.next}
-            activeClassName={styles.myActive}
-          />
-        </Container>
-      </section>
-    </>
+    <section className="stock-list">
+      <Container fluid style={{ backgroundColor: '#00800080', padding: 0 }}>
+        <StocksFilter />
+        { isLoading ? <Loading color="#d1450d" /> : (
+          <>
+            <Row className="px-2">
+              { stocks && displayStocksPerPage.map(stock => (
+                <Col sm={12} md={6} lg={3} key={`stck-${stock.symbol}`} className="px-2">
+                  <article
+                    className="stock-preview"
+                    style={{ backgroundColor: '#ffffffe6', margin: '10px 0', borderRadius: 10 }}
+                  >
+                    <Stock stock={stock} />
+                  </article>
+                </Col>
+              ))}
+            </Row>
+            <ReactPaginate
+              previousLabel="PREV"
+              nextLabel="NEXT"
+              pageCount={pageCount}
+              onPageChange={pageChange}
+              containerClassName={styles.myClass}
+              previousLinkClassName={styles.prev}
+              nextLinkClassName={styles.next}
+              activeClassName={styles.myActive}
+            />
+          </>
+        )}
+
+      </Container>
+    </section>
   );
 };
 
