@@ -36,5 +36,5 @@ describe('Navbar component', () => {
     expect(screen.getByText(/StocksCatalogue/)).toHaveAttribute('href', '/');
     expect(screen.getByText(/Home/)).toHaveAttribute('href', '/');
     expect(screen.getByText(/StockNews/)).toHaveAttribute('href', '/news');
-  })
+  });
 });

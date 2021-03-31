@@ -26,7 +26,7 @@ const StockList = () => {
   // localStorage.setItem('stocks', JSON.stringify(data));
   const filter = useSelector(state => state.filter.filter);
 
-  const exchanges = stocks.slice(0, 1000).map(stock => stock.exchange);
+  const exchanges = stocks ? stocks.slice(0, 1000).map(stock => stock.exchange) : null;
   STOCKS_FILTERS.EXCHANGE = exchanges;
 
   const renderFilteredStocks = (() => {

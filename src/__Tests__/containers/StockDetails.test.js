@@ -8,6 +8,8 @@ import rootNode from '../helpers';
 import '@testing-library/jest-dom/extend-expect';
 
 describe('StockDetails Container component', () => {
+  afterEach(cleanup);
+
   test('renders without crashing', () => {
     ReactDOM.render(<Provider store={store}><StockDetails /></Provider>, rootNode());
   });

@@ -1,9 +1,9 @@
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import renderer from 'react-test-renderer';
+import { cleanup, render } from '@testing-library/react';
 import Stock from '../../components/Stock';
 import rootNode from '../helpers';
-import { cleanup, render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
 describe('Stock component', () => {

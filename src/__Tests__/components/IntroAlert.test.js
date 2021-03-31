@@ -1,6 +1,8 @@
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import { cleanup, getByRole, fireEvent, render } from '@testing-library/react';
+import {
+  cleanup, fireEvent, render,
+} from '@testing-library/react';
 import IntroAlert from '../../components/IntroAlert';
 import rootNode from '../helpers';
 import '@testing-library/jest-dom/extend-expect';
@@ -27,5 +29,4 @@ describe('IntroALert component', () => {
     fireEvent.click(getByRole('button'));
     expect(getByText('Greeting!')).toBeInTheDocument();
   });
-
 });
