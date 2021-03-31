@@ -17,7 +17,6 @@ const StockDetails = () => {
   const { data: quotass } = useFetch(`${process.env.REACT_APP_QUOTA_API_URL}${symbol}?apikey=${process.env.REACT_APP_STOCKS_API_KEY}`);
 
   if (profile && quotass) {
-    console.log(quotass, profile);
     localStorage.setItem('quotas', JSON.stringify(quotass));
     localStorage.setItem('profile', JSON.stringify(profile));
     dispatch(getProfile(profile));
@@ -26,13 +25,11 @@ const StockDetails = () => {
 
   const data = JSON.parse(localStorage.getItem('profile'));
   const quotases = JSON.parse(localStorage.getItem('quotas'));
-  console.log(quotases);
-  console.log(data);
 
   return (
     <section className="stockDetails" style={{ color: '#fff' }}>
       <Container>
-        { isLoading ? <Loading /> : (
+        { isLoading ? <Loading color="blue" /> : (
           <>
             <div className="company-preview mb-3">
               <header className={styles.coHeader}>
@@ -237,7 +234,6 @@ const StockDetails = () => {
                   </div>
                 </Col>
               </Row>
-
             </div>
           </>
         )}
