@@ -19,6 +19,7 @@ A Single Page Application (SPA) that provides financial stock details.
 <a href="#usage">Usage</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 <a href="#app">App</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 <a href="#with">Building</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#tests">Testing</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 <a href="#author">Author</a>
 
 ## Background <a name = "about"></a>
@@ -67,6 +68,12 @@ With the installations above complete, you are set to locally use the code. Foll
 
 - Run `npm start` to start webpack-dev-server.
 - If everything worked well, the browser should automatically render the application on `http://localhost:3000/`.
+
+## 🧪 Testing <a name= "tests"></a>
+
+Jest and React Testing Library were used to test the code herein.
+To run the tests, simply type:
+- `npm test` or `npm run test` in the terminal and hit enter. This will run the npm test script
 
 ## ✒️ Author <a name = "author"></a>
 
