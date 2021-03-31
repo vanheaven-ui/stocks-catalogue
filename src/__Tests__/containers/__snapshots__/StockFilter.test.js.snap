@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`StockFilter Container component doesnot change unexpectedly 1`] = `
+exports[`StockFilter container component doesnot change unexpectedly 1`] = `
 <section
   className="filters"
   style={
