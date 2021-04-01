@@ -5,7 +5,7 @@ import News from '../../../components/pages/News';
 import rootNode from '../../helpers';
 import store from '../../../redux/store';
 
-describe('NotFound page', () => {
+describe('News page', () => {
   test('renders without crashing', () => {
     ReactDOM.render(<Provider store={store}><News /></Provider>, rootNode());
   });
