@@ -5,7 +5,7 @@ import { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import { getStockList } from '../redux/actions';
 import StocksFilter from './StockFilter';
-import useFetch from '../common/hooks/useFetch';
+import useFetch1 from '../common/hooks/useFetch1';
 import STOCKS_FILTERS, { listEndPoint } from '../constants';
 import { filterByExchange, getStocksByPrice } from '../redux/selectors';
 import Stock from '../components/Stock';
@@ -19,7 +19,8 @@ const StockList = () => {
   const stocksDisplayed = pageNumber * stocksPerPage;
 
   const dispatch = useDispatch();
-  const { data, isLoading } = useFetch(listEndPoint);
+
+  const { data, isLoading } = useFetch1(listEndPoint);
   if (data) {
     localStorage.setItem('stocks', JSON.stringify(data));
   }
@@ -31,6 +32,7 @@ const StockList = () => {
   STOCKS_FILTERS.EXCHANGE = exchanges;
 
   const renderFilteredStocks = (() => {
+    console.log(stocks);
     let stocks2render = stocks.slice(0, 1000);
     if (filter.price) {
       stocks2render = getStocksByPrice(stocks2render, filter.price);
