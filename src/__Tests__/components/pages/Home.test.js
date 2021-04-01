@@ -10,7 +10,7 @@ describe('Home component', () => {
   afterEach(cleanup);
   test('Renders without crashing', () => {
     ReactDOM.render(<Provider store={store}><Home /></Provider>, rootNode());
-  }); 
+  });
 
   test('doesnot change unexpectedly', () => {
     const tree = renderer.create(<Provider store={store}><Home /></Provider>).toJSON();
@@ -21,6 +21,4 @@ describe('Home component', () => {
     const { container } = render(<Provider store={store}><Home /></Provider>);
     expect(container.firstChild.classList.contains(/home/)).toBe(true);
   });
-
-
 });

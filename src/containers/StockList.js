@@ -32,7 +32,6 @@ const StockList = () => {
   STOCKS_FILTERS.EXCHANGE = exchanges;
 
   const renderFilteredStocks = (() => {
-    console.log(stocks);
     let stocks2render = stocks.slice(0, 1000);
     if (filter.price) {
       stocks2render = getStocksByPrice(stocks2render, filter.price);

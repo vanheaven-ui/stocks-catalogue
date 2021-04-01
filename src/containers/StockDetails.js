@@ -10,10 +10,13 @@ import styles from '../styles/details.module.css';
 import Loading from '../components/Loading';
 
 const StockDetails = ({ symbol }) => {
+  const id = symbol;
   const dispatch = useDispatch();
+  const profileURL = `${profileEndPoint}/${symbol}?apikey=${process.env.REACT_APP_STOCKS_API_KEY}`;
+  const qURL = `${process.env.REACT_APP_QUOTA_API_URL}${id}?apikey=${process.env.REACT_APP_STOCKS_API_KEY}`;
 
-  const { data: profile, isLoading } = useFetch1(`${profileEndPoint}/${symbol}?apikey=${process.env.REACT_APP_STOCKS_API_KEY}`);
-  const { data: quotass } = useFetch1(`${process.env.REACT_APP_QUOTA_API_URL}${symbol}?apikey=${process.env.REACT_APP_STOCKS_API_KEY}`);
+  const { data: profile, isLoading } = useFetch1(profileURL);
+  const { data: quotass } = useFetch1(qURL);
 
   if (profile.length && quotass.length) {
     localStorage.setItem('quotas', JSON.stringify(quotass));
