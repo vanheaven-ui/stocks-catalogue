@@ -29,6 +29,7 @@
   text-align: center;
   align-items: center;
   line-height: 60px;
+  display: flex;
 }
 
 .priceDiv {
