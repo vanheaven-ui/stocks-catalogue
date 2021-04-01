@@ -1,22 +1,21 @@
-import { useParams } from 'react-router-dom';
 import {
-  Badge, Col, Container, Row,
-} from 'react-bootstrap'; //
+  Container, Badge, Col, Row,
+} from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import { profileEndPoint } from '../constants';
-import useFetch from '../common/hooks/useFetch';
-import { getQuotas, getProfile } from '../redux/actions'; //
+import useFetch1 from '../common/hooks/useFetch1';
+import { getQuotas, getProfile } from '../redux/actions';
 import styles from '../styles/details.module.css';
 import Loading from '../components/Loading';
 
-const StockDetails = () => {
+const StockDetails = ({ symbol }) => {
   const dispatch = useDispatch();
-  const { symbol } = useParams();
 
-  const { data: profile, isLoading } = useFetch(`${profileEndPoint}/${symbol}?apikey=${process.env.REACT_APP_STOCKS_API_KEY}`);
-  const { data: quotass } = useFetch(`${process.env.REACT_APP_QUOTA_API_URL}${symbol}?apikey=${process.env.REACT_APP_STOCKS_API_KEY}`);
+  const { data: profile, isLoading } = useFetch1(`${profileEndPoint}/${symbol}?apikey=${process.env.REACT_APP_STOCKS_API_KEY}`);
+  const { data: quotass } = useFetch1(`${process.env.REACT_APP_QUOTA_API_URL}${symbol}?apikey=${process.env.REACT_APP_STOCKS_API_KEY}`);
 
-  if (profile && quotass) {
+  if (profile.length && quotass.length) {
     localStorage.setItem('quotas', JSON.stringify(quotass));
     localStorage.setItem('profile', JSON.stringify(profile));
     dispatch(getProfile(profile));
@@ -51,14 +50,29 @@ const StockDetails = () => {
                 )}
               </header>
               <div className={styles.aboutCo}>
-                <h3 style={{ width: 'max-content', textDecoration: 'underline' }}>About Company:</h3>
+                <h3
+                  style={{ width: 'max-content', textDecoration: 'underline' }}
+                >
+                  About Company:
+                </h3>
                 { data[0].description && <p>{data[0].description}</p> }
               </div>
             </div>
-            <div className={styles.stockDetails} style={{ backgroundColor: '#f1f1e2', color: '#333' }}>
-              <h2 className={styles.stckHdr} style={{ width: 'max-content', margin: '0 auto 20px' }}>
+            <div
+              className={styles.stockDetails}
+              style={{ backgroundColor: '#f1f1e2', color: '#333' }}
+            >
+              <h2
+                className={styles.stckHdr}
+                style={{ width: 'max-content', margin: '0 auto 20px' }}
+              >
                 Stock details
-                <Badge variant="success" style={{ marginLeft: 10 }}>{data[0].symbol}</Badge>
+                <Badge
+                  variant="success"
+                  style={{ marginLeft: 10 }}
+                >
+                  {data[0].symbol}
+                </Badge>
               </h2>
               <Row>
                 <Col sm={12} md={5} className={styles.stckDetails}>
@@ -144,7 +158,15 @@ const StockDetails = () => {
                   )}
                 </Col>
                 <Col sm={12} md={5}>
-                  <h2 style={{ backgroundColor: 'blueviolet', color: '#fff', padding: '3px 12px' }}>Quota</h2>
+                  <h2
+                    style={{
+                      backgroundColor: 'blueviolet',
+                      color: '#fff',
+                      padding: '3px 12px',
+                    }}
+                  >
+                    Quota
+                  </h2>
                   <div className={styles.quotas}>
                     Loading..
                     { quotases[0].avgVolume && (
@@ -240,6 +262,10 @@ const StockDetails = () => {
       </Container>
     </section>
   );
+};
+
+StockDetails.propTypes = {
+  symbol: PropTypes.string.isRequired,
 };
 
 export default StockDetails;
