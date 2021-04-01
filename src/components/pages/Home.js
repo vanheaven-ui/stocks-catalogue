@@ -7,7 +7,7 @@ import IntroAlert from '../IntroAlert';
 import StockList from '../../containers/StockList';
 
 const Home = () => (
-  <>
+  <section className="home">
     <section className="hero">
       <Container fluid>
         <Row style={{ height: 362 }}>
@@ -29,7 +29,7 @@ const Home = () => (
 
     </section>
     <StockList />
-  </>
+  </section>
 );
 
 export default Home;
