@@ -47,8 +47,13 @@ const useFetch1 = url => {
         setData(data);
         setIsLoading(false);
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        const alert = document.createElement('div');
+        alert.innerHTML = err.message;
+        document.body.insertAdjacentElement('afterbegin', alert);
 
+        setTimeout(() => alert.remove(), 1000);
+      });
     return () => abortCont.abort();
   }, [url]);
   return { data, isLoading };
