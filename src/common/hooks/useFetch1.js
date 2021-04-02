@@ -41,7 +41,13 @@ const useFetch1 = url => {
   useEffect(() => {
     const abortCont = new AbortController();
     setIsLoading(true);
-    fetch(url, { signal: abortCont.signal })
+    fetch(url, { 
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+      },
+      signal: abortCont.signal 
+    })
       .then(res => res.json())
       .then(data => {
         setData(data);
