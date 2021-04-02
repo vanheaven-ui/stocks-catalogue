@@ -39,17 +39,17 @@ const useFetch1 = url => {
   // }, [url]);
 
   useEffect(() => {
-    const abortCont = new AbortController();
+    // const abortCont = new AbortController();
     setIsLoading(true);
     fetch(url, {
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
       },
-      signal: abortCont.signal,
     })
       .then(res => res.json())
       .then(data => {
+        console.log(data);
         setData(data);
         setIsLoading(false);
       })
@@ -60,7 +60,7 @@ const useFetch1 = url => {
 
         setTimeout(() => alert.remove(), 1000);
       });
-    return () => abortCont.abort();
+    // return () => abortCont.abort();
   }, [url]);
   return { data, isLoading };
 };
