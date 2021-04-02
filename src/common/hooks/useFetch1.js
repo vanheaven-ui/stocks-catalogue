@@ -8,7 +8,13 @@ const useFetch1 = url => {
     const abortCont = new AbortController();
     setIsLoading(true);
     const fetchData = (async () => {
-      const response = await fetch(url, { signal: abortCont.signal });
+      const response = await fetch(url, {
+        signal: abortCont.signal,
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+      });
       if (!response.ok) {
         throw Error(`Encountered error: ${response.status}`);
       }
