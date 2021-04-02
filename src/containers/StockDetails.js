@@ -4,29 +4,29 @@ import {
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { profileEndPoint } from '../constants';
-import useFetch1 from '../common/hooks/useFetch1';
-import { getQuotas, getProfile } from '../redux/actions';
 import styles from '../styles/details.module.css';
 import Loading from '../components/Loading';
+import useFetch1 from '../common/hooks/useFetch1';
+import { getProfile, getQuotas } from '../redux/actions';
 
 const StockDetails = ({ symbol }) => {
   const id = symbol;
   const dispatch = useDispatch();
-  const profileURL = `${profileEndPoint}/${symbol}?apikey=${process.env.REACT_APP_STOCKS_API_KEY}`;
+  const profileURL = `${profileEndPoint}/${id}?apikey=${process.env.REACT_APP_STOCKS_API_KEY}`;
   const qURL = `${process.env.REACT_APP_QUOTA_API_URL}${id}?apikey=${process.env.REACT_APP_STOCKS_API_KEY}`;
 
   const { data: profile, isLoading } = useFetch1(profileURL);
-  const { data: quotass } = useFetch1(qURL);
+  const { data: quota } = useFetch1(qURL);
 
-  if (profile.length && quotass.length) {
-    localStorage.setItem('quotas', JSON.stringify(quotass));
+  if (profile.length && quota.length) {
     localStorage.setItem('profile', JSON.stringify(profile));
     dispatch(getProfile(profile));
-    dispatch(getQuotas(quotass));
+    localStorage.setItem('quotas', JSON.stringify(quota));
+    dispatch(getQuotas(quota));
   }
 
-  const data = JSON.parse(localStorage.getItem('profile'));
   const quotases = JSON.parse(localStorage.getItem('quotas'));
+  const data = JSON.parse(localStorage.getItem('profile'));
 
   return (
     <section className="stockDetails" style={{ color: '#fff' }}>
