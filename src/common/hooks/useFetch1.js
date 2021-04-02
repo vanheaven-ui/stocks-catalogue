@@ -19,6 +19,14 @@ const useFetch1 = url => {
       setIsLoading(false);
       setData(stocks);
     });
+
+    fetchData.catch(err => {
+      const alert = document.createElement('div');
+      alert.innerHTML = err.message;
+      document.body.insertAdjacentElement('afterbegin', alert);
+
+      setTimeout(() => alert.remove(), 1000);
+    });
   }, [url]);
   return { data, isLoading };
 };
