@@ -3,7 +3,7 @@
 # Stocks Catalogue
 
 A Single Page Application (SPA) that provides financial stock details.
-👉<b>[Live Demo]</b>(https://secure-anchorage-47852.herokuapp.com/)
+<b>[Live Demo]</b>(https://secure-anchorage-47852.herokuapp.com/)
 
 ![Linters](https://img.shields.io/badge/%E2%9C%94%EF%B8%8FLinting-Yes-ff69b4)
 
