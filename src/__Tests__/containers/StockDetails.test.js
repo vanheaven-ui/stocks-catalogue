@@ -9,10 +9,12 @@ import '@testing-library/jest-dom/extend-expect';
 
 describe('StockDetails Container component', () => {
   afterEach(cleanup);
-  const symbol = '';
+  const symbol = 'MES';
 
   test('renders without crashing', () => {
-    ReactDOM.render(<Provider store={store}><StockDetails symbol={symbol} /></Provider>, rootNode());
+    ReactDOM.render(
+      <Provider store={store}><StockDetails symbol={symbol} /></Provider>, rootNode(),
+    );
   });
 
   test('doesnot change unexpectedly', () => {
