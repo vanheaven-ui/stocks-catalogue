@@ -26,6 +26,7 @@ const StockList = () => {
   }
   const stocks = JSON.parse(localStorage.getItem('stocks'));
   dispatch(getStockList(stocks));
+
   const filter = useSelector(state => state.filter.filter);
 
   const exchanges = stocks ? stocks.slice(0, 1000).map(stock => stock.exchange) : null;
