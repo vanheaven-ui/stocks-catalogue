@@ -171,7 +171,6 @@ const StockDetails = ({ symbol }) => {
                     Quota
                   </h2>
                   <div className={styles.quotas}>
-                    Loading..
                     { quotases[0].avgVolume && (
                     <h5>
                       <span style={{ fontWeigh: 700 }}>Avg. Volume:</span>
