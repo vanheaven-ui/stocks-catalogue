@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import { render, cleanup } from '@testing-library/react'; 
+import { render, cleanup } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import News from '../../../components/pages/News';
 import rootNode from '../../helpers';

@@ -26,7 +26,7 @@ describe('Routes component', () => {
 
   test('renders the correct wrapper element', () => {
     render(
-      <BrowserRouter><Provider store={store}><Routes /></Provider></BrowserRouter>
+      <BrowserRouter><Provider store={store}><Routes /></Provider></BrowserRouter>,
     );
     expect(screen.getByText(/INFORMATION FOR YOUR/)).toBeInTheDocument();
   });

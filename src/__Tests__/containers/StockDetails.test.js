@@ -18,7 +18,9 @@ describe('StockDetails Container component', () => {
   });
 
   test('doesnot change unexpectedly', () => {
-    const tree = renderer.create(<Provider store={store}><StockDetails symbol={symbol} /></Provider>).toJSON();
+    const tree = renderer.create(
+      <Provider store={store}><StockDetails symbol={symbol} /></Provider>,
+    ).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
