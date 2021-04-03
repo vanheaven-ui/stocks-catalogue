@@ -3,10 +3,6 @@
 # Stocks Catalogue
 
 A Single Page Application (SPA) that provides financial stock details.
-<<<<<<< HEAD
-=======
-<b>[Live Demo]</b>(https://secure-anchorage-47852.herokuapp.com/)
->>>>>>> 566ac84c1810bf690417ba85572423c7dfc5f985
 
 ![Linters](https://img.shields.io/badge/%E2%9C%94%EF%B8%8FLinting-Yes-ff69b4)
 
