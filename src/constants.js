@@ -1,6 +1,4 @@
-// export const listEndPoint =
-// `${process.env.REACT_APP_LIST_API_URL}${process.env.REACT_APP_STOCKS_API_KEY}`;
-export const listEndPoint = 'https://financialmodelingprep.com/api/v3/stock/list?apikey=ef56e9bca09781d1d8bdac85bba6603b';
+export const listEndPoint = `${process.env.REACT_APP_LIST_API_URL}${process.env.REACT_APP_STOCKS_API_KEY}`;
 export const profileEndPoint = 'https://financialmodelingprep.com/api/v3/profile/';
 
 const STOCKS_FILTERS = {
