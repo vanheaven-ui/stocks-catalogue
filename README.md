@@ -3,7 +3,6 @@
 # Stocks Catalogue
 
 A Single Page Application (SPA) that provides financial stock details.
-<b>[👉Live Demo]</b>(https://secure-anchorage-47852.herokuapp.com/)
 
 ![Linters](https://img.shields.io/badge/%E2%9C%94%EF%B8%8FLinting-Yes-ff69b4)
 
@@ -26,6 +25,10 @@ A Single Page Application (SPA) that provides financial stock details.
 ## Background <a name = "about"></a>
 
 The application herein was developed as per [Microverse Inc.](https://www.microverse.org/) specificifications. The main task was to use `create-react-app` and build and a single page application that displays a catalogue of items received from an API of choice. This application consumes the [Financial Modelling Prep API](https://financialmodelingprep.com/developer/docs/) to gather information on real time stocks which are displayed in React components. Redux was used to centrally manage the application state. To enhance the browsing of stocks, filters were added. 
+
+## Live Demo
+
+The app is deployed and live demo link is [👉Here](https://secure-anchorage-47852.herokuapp.com/)
 
 ## 🔧 Building<a name = "with"></a>
 
