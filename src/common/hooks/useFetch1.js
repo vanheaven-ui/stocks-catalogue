@@ -39,13 +39,14 @@ const useFetch1 = url => {
   // }, [url]);
 
   useEffect(() => {
-    // const abortCont = new AbortController();
+    const abortCont = new AbortController();
     setIsLoading(true);
     fetch(url, {
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
       },
+      signal: abortCont.abort(),
     })
       .then(res => res.json())
       .then(data => {
@@ -56,11 +57,12 @@ const useFetch1 = url => {
       .catch(err => {
         const alert = document.createElement('div');
         alert.innerHTML = err.message;
+        alert.classList.add('my-alert');
         document.body.insertAdjacentElement('afterbegin', alert);
 
         setTimeout(() => alert.remove(), 1000);
       });
-    // return () => abortCont.abort();
+    return () => abortCont.abort();
   }, [url]);
   return { data, isLoading };
 };
