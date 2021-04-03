@@ -55,12 +55,13 @@ const useFetch1 = url => {
         setIsLoading(false);
       })
       .catch(err => {
-        const alert = document.createElement('div');
-        alert.innerHTML = err.message;
-        alert.classList.add('my-alert');
-        document.body.insertAdjacentElement('afterbegin', alert);
+        console.log(err.message);
+        // const alert = document.createElement('div');
+        // alert.innerHTML = err.message;
+        // alert.classList.add('my-alert');
+        // document.body.insertAdjacentElement('afterbegin', alert);
 
-        setTimeout(() => alert.remove(), 1000);
+        // setTimeout(() => alert.remove(), 1000);
       });
     return () => abortCont.abort();
   }, [url]);
