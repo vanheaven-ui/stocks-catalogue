@@ -5,7 +5,7 @@ import {
 } from '@testing-library/react';
 import IntroAlert from '../../components/IntroAlert';
 import rootNode from '../helpers';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 
 describe('IntroALert component', () => {
   afterEach(cleanup);

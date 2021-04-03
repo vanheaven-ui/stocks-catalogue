@@ -19,6 +19,6 @@ describe('Home component', () => {
 
   test('renders the correct wrapper element', () => {
     const { container } = render(<Provider store={store}><Home /></Provider>);
-    expect(container.firstChild.classList.contains(/home/)).toBe(true);
+    expect(container.firstChild.classList.contains('home')).toBe(true);
   });
 });
