@@ -50,6 +50,7 @@ const useFetch1 = url => {
     })
       .then(res => res.json())
       .then(data => {
+        console.log(data);
         setData(data);
         setIsLoading(false);
       })

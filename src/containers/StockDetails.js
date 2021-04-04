@@ -1,15 +1,15 @@
 import {
   Container, Badge, Col, Row,
 } from 'react-bootstrap'; //
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import styles from '../styles/details.module.css';
 
 const StockDetails = () => {
-  const quotases = JSON.parse(localStorage.getItem('quotas'));
-  const data = JSON.parse(localStorage.getItem('profile'));
+  // const quotases = JSON.parse(localStorage.getItem('quotas'));
+  // const data = JSON.parse(localStorage.getItem('profile'));
 
-  // const data = useSelector(state => state.stocks.profiles);
-  // const quotases = useSelector(state => state.stocks.quotas);
+  const data = useSelector(state => state.stocks.profiles);
+  const quotases = useSelector(state => state.stocks.quotas);
 
   console.log(data);
   console.log(quotases);
@@ -17,7 +17,7 @@ const StockDetails = () => {
   return (
     <section className="stockDetails" style={{ color: '#fff' }}>
       <Container>
-        { data && quotases && (
+        { data.length > 0 && quotases.length > 0 && (
           <>
             <div className="company-preview mb-3">
               <header className={styles.coHeader}>

@@ -16,9 +16,9 @@ const Details = () => {
   const { data: profile, isLoading } = useFetch1(profileURL);
   const { data: quota } = useFetch1(qURL);
 
-  console.log(profile);
+  console.log(profile.length);
 
-  if (profile.length && quota.length) {
+  if ((profile.length > 0) && (quota.length > 0)) {
     console.log(profile);
     console.log(quota);
     localStorage.setItem('profile', JSON.stringify(profile));
