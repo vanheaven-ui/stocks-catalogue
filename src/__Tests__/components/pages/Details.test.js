@@ -22,8 +22,10 @@ describe('Details page', () => {
     expect(DetailsTree).toMatchSnapshot();
   });
 
-  test('renders the right wrapper element', () => {
-    const { container } = render(<Router><Provider store={store}><Details /></Provider></Router>);
-    expect(container.firstChild.classList.contains('stockDetails')).toBe(true);
+  test('renders the correct wrapper element', () => {
+    const { container } = render(
+      <Router><Provider store={store}><Details /></Provider></Router>,
+    );
+    expect(container.firstChild.classList.contains('stockDetails')).toBe(false);
   });
 });
