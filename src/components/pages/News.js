@@ -15,7 +15,7 @@ const News = () => {
   const news = useSelector(state => state.stocks.news);
   return (
     <section className="news">
-      { isLoading && news.length === 0 && <Loading color="green" /> }
+      { isLoading && <Loading color="green" /> }
       { !isLoading && news.length > 0 && (
         <Container style={{ backgroundColor: '#fff', textAlign: 'center' }}>
           {news && news.map(item => (
