@@ -1,37 +1,23 @@
 import {
   Container, Badge, Col, Row,
-} from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
-import PropTypes from 'prop-types';
-import { profileEndPoint } from '../constants';
+} from 'react-bootstrap'; //
+// import { useSelector } from 'react-redux';
 import styles from '../styles/details.module.css';
-import Loading from '../components/Loading';
-import useFetch1 from '../common/hooks/useFetch1';
-import { getProfile, getQuotas } from '../redux/actions';
 
-const StockDetails = ({ symbol }) => {
-  const id = symbol;
-  const dispatch = useDispatch();
-  const profileURL = `${profileEndPoint}/${id}?apikey=${process.env.REACT_APP_STOCKS_API_KEY}`;
-  const qURL = `${process.env.REACT_APP_QUOTA_API_URL}${id}?apikey=${process.env.REACT_APP_STOCKS_API_KEY}`;
-
-  const { data: profile, isLoading } = useFetch1(profileURL);
-  const { data: quota } = useFetch1(qURL);
-
-  if (profile.length && quota.length) {
-    localStorage.setItem('profile', JSON.stringify(profile));
-    dispatch(getProfile(profile));
-    localStorage.setItem('quotas', JSON.stringify(quota));
-    dispatch(getQuotas(quota));
-  }
-
+const StockDetails = () => {
   const quotases = JSON.parse(localStorage.getItem('quotas'));
   const data = JSON.parse(localStorage.getItem('profile'));
+
+  // const data = useSelector(state => state.stocks.profiles);
+  // const quotases = useSelector(state => state.stocks.quotas);
+
+  console.log(data);
+  console.log(quotases);
 
   return (
     <section className="stockDetails" style={{ color: '#fff' }}>
       <Container>
-        { isLoading ? <Loading color="blue" /> : (
+        { data && quotases && (
           <>
             <div className="company-preview mb-3">
               <header className={styles.coHeader}>
@@ -264,10 +250,6 @@ const StockDetails = ({ symbol }) => {
       </Container>
     </section>
   );
-};
-
-StockDetails.propTypes = {
-  symbol: PropTypes.string.isRequired,
 };
 
 export default StockDetails;
