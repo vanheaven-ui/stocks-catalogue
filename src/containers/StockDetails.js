@@ -1,6 +1,6 @@
 import {
   Container, Badge, Col, Row,
-} from 'react-bootstrap'; //
+} from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import styles from '../styles/details.module.css';
 
@@ -84,7 +84,7 @@ const StockDetails = () => {
                   <h5>
                     <span style={{ fontWeight: '700' }}>Website:</span>
                     {' '}
-                    <a href={data[0].website}>{data[0].website}</a>
+                    <a href={data[0].website} target="_blank" rel="noreferrer">{data[0].website}</a>
                   </h5>
                   )}
                   {data[0].currency && (
