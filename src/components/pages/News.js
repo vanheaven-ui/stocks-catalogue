@@ -1,5 +1,5 @@
 import { Badge, Container } from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import useFetch1 from '../../common/hooks/useFetch1';
 import { getNews } from '../../redux/actions';
 import Loading from '../Loading';
@@ -8,19 +8,18 @@ const News = () => {
   const dispatch = useDispatch();
   const { data, isLoading } = useFetch1(`${process.env.REACT_APP_NEWS_API_KEY}apikey=${process.env.REACT_APP_STOCKS_API_KEY}`);
 
-  if (data) {
-    localStorage.setItem('news', JSON.stringify(data));
+  if (data.length > 0) {
+    dispatch(getNews(data));
   }
 
-  const news = JSON.parse(localStorage.getItem('news'));
-  dispatch(getNews(news));
-
+  const news = useSelector(state => state.stocks.news);
   return (
     <section className="news">
-      { isLoading ? <Loading color="green" /> : (
+      { isLoading && news.length === 0 && <Loading color="green" /> }
+      { !isLoading && news.length > 0 && (
         <Container style={{ backgroundColor: '#fff', textAlign: 'center' }}>
           {news && news.map(item => (
-            <article className="news-article" key={item.symbol}>
+            <article className="news-article" key={item.url}>
               <header>
                 { item.title && (
                 <h2>
