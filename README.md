@@ -4,7 +4,9 @@
 
 A Single Page Application (SPA) that provides financial stock details.
 
-![Linters](https://img.shields.io/badge/%E2%9C%94%EF%B8%8FLinting-Yes-ff69b4)
+[![Github Issues](https://img.shields.io/badge/GitHub-Issues-orange)](https://github.com/vanheaven-ui/stocks-catalogue/issues)
+[![GitHub Pull Requests](https://img.shields.io/badge/GitHub-Pull%20Requests-blue)](https://github.com/vanheaven-ui/stocks-catalogue/pulls)
+![Linters](https://img.shields.io/badge/Linters-pass-brightgreen)
 
 </div>
 
@@ -28,7 +30,7 @@ The application herein was developed as per [Microverse Inc.](https://www.microv
 
 ## Live Demo
 
-The app is deployed and live demo link is [👉Here](https://secure-anchorage-47852.herokuapp.com/)
+The app is deployed and live demo link is [👉Here](https://stockscatalogue.netlify.app/)
 
 ## 🔧 Building<a name = "with"></a>
 
@@ -92,7 +94,7 @@ To run the tests, simply type:
 
 Contributions, issues and feature requests are welcome!
 
-- To create an issue, visit the [issues page](https://github.com/vanheaven-ui/React-calc/issues) and create a new issue.
+- To create an issue, visit the [issues page](https://github.com/vanheaven-ui/stocks-catalogue/issues) and create a new issue.
 - To contribute to the code base, follow the steps below:
   1. Fork this repository to your remote respository by clicking the Fork button in this repository.(optional)
   2. Clone this repository to a directory on your computer by following Github guidelines.
