@@ -5,14 +5,8 @@ import { useSelector } from 'react-redux';
 import styles from '../styles/details.module.css';
 
 const StockDetails = () => {
-  // const quotases = JSON.parse(localStorage.getItem('quotas'));
-  // const data = JSON.parse(localStorage.getItem('profile'));
-
   const data = useSelector(state => state.stocks.profiles);
   const quotases = useSelector(state => state.stocks.quotas);
-
-  console.log(data);
-  console.log(quotases);
 
   return (
     <section className="stockDetails" style={{ color: '#fff' }}>
@@ -89,7 +83,8 @@ const StockDetails = () => {
                   { data[0].website && (
                   <h5>
                     <span style={{ fontWeight: '700' }}>Website:</span>
-                    {data[0].website}
+                    {' '}
+                    <a href={data[0].website}>{data[0].website}</a>
                   </h5>
                   )}
                   {data[0].currency && (
