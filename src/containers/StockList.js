@@ -21,12 +21,13 @@ const StockList = () => {
   const dispatch = useDispatch();
 
   const { data, isLoading } = useFetch1(listEndPoint);
-  if (data) {
-    localStorage.setItem('stocks', JSON.stringify(data));
-  }
-  const stocks = JSON.parse(localStorage.getItem('stocks'));
-  dispatch(getStockList(stocks));
 
+  if (data.length > 0) {
+    dispatch(getStockList(data));
+  }
+
+  const stocks = useSelector(state => state.stocks.stocks);
+  
   const filter = useSelector(state => state.filter.filter);
 
   const exchanges = stocks ? stocks.slice(0, 1000).map(stock => stock.exchange) : null;
