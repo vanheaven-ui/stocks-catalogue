@@ -3,22 +3,28 @@ import Container from 'react-bootstrap/Container';
 import { Col, Row } from 'react-bootstrap';
 import { useState } from 'react';
 import ReactPaginate from 'react-paginate';
-import { getStockList } from '../redux/actions';
-import StocksFilter from './StockFilter';
+import { changeFilter, getStockList } from '../redux/actions';
+import StocksFilter from '../components/StockFilter';
 import useFetch1 from '../common/hooks/useFetch1';
 import STOCKS_FILTERS, { listEndPoint } from '../constants';
 import { filterByExchange, getStocksByPrice } from '../redux/selectors';
 import Stock from '../components/Stock';
 import styles from '../styles/paginate.module.css';
 import Loading from '../components/Loading';
+import removeDups from '../utils/removeDups';
+import style from '../styles/stockList.module.css';
 
 const StockList = () => {
-  // variables for pagination
   const [pageNumber, setPageNumber] = useState(0);
-  const stocksPerPage = 100;
+  const stocksPerPage = 20;
   const stocksDisplayed = pageNumber * stocksPerPage;
 
   const dispatch = useDispatch();
+
+  const [filter, setFilter] = useState({
+    price: null,
+    exchange: null,
+  });
 
   const { data, isLoading } = useFetch1(listEndPoint);
 
@@ -26,27 +32,53 @@ const StockList = () => {
     dispatch(getStockList(data));
   }
 
-  const stocks = useSelector(state => state.stocks.stocks);
+  const stocks = useSelector((state) => state.stocks.stocks);
 
-  const filter = useSelector(state => state.filter.filter);
-
-  const exchanges = stocks ? stocks.slice(0, 1000).map(stock => stock.exchange) : null;
+  const exchanges = stocks ? stocks.slice(0, 1000).map((stock) => stock.exchange) : null;
   STOCKS_FILTERS.EXCHANGE = exchanges;
+
+  STOCKS_FILTERS.EXCHANGE = removeDups(STOCKS_FILTERS.EXCHANGE);
+
+  const handleChange = (e) => {
+    if (e.target.name === 'PRICE') {
+      setFilter({ ...filter, price: e.target.value });
+    } if (e.target.name === 'EXCHANGE') {
+      setFilter({ ...filter, exchange: e.target.value });
+    }
+    return 'default';
+  };
+
+  const chosenValue = (() => {
+    if (filter.price) {
+      return filter.price;
+    } if (filter.exchange) {
+      return filter.exchange;
+    }
+    return 'All';
+  })();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(changeFilter(filter));
+    setFilter('default');
+  };
+
+  const updateFilter = useSelector((state) => state.filter.filter);
 
   const renderFilteredStocks = (() => {
     let stocks2render = stocks.slice(0, 1000);
-    if (filter.price) {
-      stocks2render = getStocksByPrice(stocks2render, filter.price);
-    } if (filter.exchange) {
-      stocks2render = filterByExchange(stocks2render, filter.exchange);
+    if (updateFilter.price) {
+      stocks2render = getStocksByPrice(stocks2render, updateFilter.price);
+    } if (updateFilter.exchange) {
+      stocks2render = filterByExchange(stocks2render, updateFilter.exchange);
     }
     return stocks2render;
   })();
 
   const sliceStart = stocksDisplayed;
   const sliceEnd = stocksDisplayed + stocksPerPage;
-
   const displayStocksPerPage = renderFilteredStocks.slice(sliceStart, sliceEnd);
+
   const pageCount = stocks.slice(0, 1000).length / stocksPerPage;
 
   const pageChange = ({ selected }) => {
@@ -55,16 +87,32 @@ const StockList = () => {
 
   return (
     <section className="stock-list">
-      <Container fluid style={{ backgroundColor: '#00800080', padding: 0 }}>
-        <StocksFilter />
+      <Container fluid className={style.listContainer}>
+        <StocksFilter
+          handleChange={handleChange}
+          handleSubmit={handleSubmit}
+          chosenValue={chosenValue}
+        />
         { isLoading ? <Loading color="#d1450d" /> : (
           <>
             <Row className="px-2">
-              { stocks && displayStocksPerPage.map(stock => (
+              { displayStocksPerPage.length < 1
+                && (
+                <Col style={{
+                  textAlign: 'center', color: '#ff3300', fontSize: '1.3rem', padding: '16px 0',
+                }}
+                >
+                  No stocks in this criterion, hit apply to get all stocks
+                  {' '}
+                  <span style={{ color: 'blue' }}>or</span>
+                  {' '}
+                  change criterion
+                </Col>
+                )}
+              { displayStocksPerPage.length > 0 && displayStocksPerPage.map((stock) => (
                 <Col sm={12} md={6} lg={3} key={`stck-${stock.symbol}`} className="px-2">
                   <article
-                    className="stock-preview"
-                    style={{ backgroundColor: '#ffffffe6', margin: '10px 0', borderRadius: 10 }}
+                    className={style.stockPreview}
                   >
                     <Stock stock={stock} />
                   </article>
