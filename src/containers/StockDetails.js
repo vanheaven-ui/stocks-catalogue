@@ -5,11 +5,11 @@ import { useSelector } from 'react-redux';
 import styles from '../styles/details.module.css';
 
 const StockDetails = () => {
-  const data = useSelector(state => state.stocks.profiles);
-  const quotases = useSelector(state => state.stocks.quotas);
+  const data = useSelector((state) => state.stocks.profiles);
+  const quotases = useSelector((state) => state.stocks.quotas);
 
   return (
-    <section className="stockDetails" style={{ color: '#fff' }}>
+    <section className={styles.stockDetails}>
       <Container>
         { data.length > 0 && quotases.length > 0 && (
           <>
