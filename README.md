@@ -26,7 +26,7 @@ A Single Page Application (SPA) that provides financial stock details.
 
 ## Background <a name = "about"></a>
 
-The application herein was developed as per [Microverse Inc.](https://www.microverse.org/) specificifications. The main task was to use `create-react-app` and build and a single page application that displays a catalogue of items received from an API of choice. This application consumes the [Financial Modelling Prep API](https://financialmodelingprep.com/developer/docs/) to gather information on real time stocks which are displayed in React components. Redux was used to centrally manage the application state. To enhance the browsing of stocks, filters were added. 
+The application herein was developed as per [Microverse Inc.](https://www.microverse.org/) specificifications. The main task was to use `create-react-app` and build a single page application that displays a catalogue of items received from an API of choice. This application consumes the [Financial Modelling Prep API](https://financialmodelingprep.com/developer/docs/) to gather information on real time stocks which are displayed in React components. Redux was used to centrally manage the application state. To enhance the browsing of stocks, filters were added. 
 
 ## Live Demo
 
