@@ -5,3 +5,9 @@
   justify-content: center;
   padding-top: 20px;
 }
+
+.loadingText {
+  color: #d1450d;
+  text-shadow: 1px 1px 1px #fff;
+  font-size: 20;
+}
