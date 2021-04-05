@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IntroALert component doesnot change unexpectedly 1`] = `
+<div
+  className="fade alert alert-primary alert-dismissible show"
+  role="alert"
+>
+  <button
+    className="close"
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      aria-hidden="true"
+    >
+      ×
+    </span>
+    <span
+      className="sr-only"
+    >
+      Close alert
+    </span>
+  </button>
+  <div
+    className="alert-heading h4"
+    id="heading"
+  >
+    <span
+      aria-labelledby="heading"
+      role="img"
+    >
+      👋
+    </span>
+    Hey!, Welcome to stocks catalogue
+  </div>
+  <hr />
+  <p
+    style={
+      Object {
+        "fontSize": 16,
+      }
+    }
+  >
+    This is a Single Page Application(SPA) that consumes the
+     
+    <a
+      href="https://financialmodelingprep.com/developer/docs/"
+      rel="noreferrer"
+      style={
+        Object {
+          "fontWeight": 700,
+          "textDecoration": "underline",
+        }
+      }
+      target="_blank"
+    >
+      financialmodelingprep API
+       
+    </a>
+    to get real time stock trading details and news so that they are easily accessible.
+    <br />
+    <strong>
+      Remember to use the filter to narrow down your browsing list.
+    </strong>
+    <br />
+    Enjoy and make the best decision in this volatile business!
+  </p>
+</div>
+`;

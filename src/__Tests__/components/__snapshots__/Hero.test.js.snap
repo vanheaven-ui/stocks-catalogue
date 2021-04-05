@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hero component doesnot change unexpectedly 1`] = `
+<div
+  className="bg-dark text-white card"
+  style={
+    Object {
+      "height": 200,
+    }
+  }
+>
+  <img
+    alt="Card image"
+    className="card-img"
+    src="hero.jpg"
+  />
+  <div
+    className="card-img-overlay"
+  >
+    <div
+      className="card-title h5"
+      style={
+        Object {
+          "fontSize": 48,
+          "textShadow": "3px 2px black",
+        }
+      }
+    >
+      INFORMATION FOR YOUR
+      <br />
+      NEXT STOCKS INVESTMENT
+    </div>
+  </div>
+</div>
+`;

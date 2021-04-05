@@ -4,13 +4,15 @@
 
 A Single Page Application (SPA) that provides financial stock details.
 
-![Linters](https://img.shields.io/badge/%E2%9C%94%EF%B8%8FLinting-Yes-ff69b4)
+[![Github Issues](https://img.shields.io/badge/GitHub-Issues-orange)](https://github.com/vanheaven-ui/stocks-catalogue/issues)
+[![GitHub Pull Requests](https://img.shields.io/badge/GitHub-Pull%20Requests-blue)](https://github.com/vanheaven-ui/stocks-catalogue/pulls)
+![Linters](https://img.shields.io/badge/Linters-pass-brightgreen)
 
 </div>
 
 ## Application Screenshot
 
-# This is space for your application screenshot
+![Screenshot](screenshot/screenshot.gif)
 
 ## Content
 
@@ -19,11 +21,16 @@ A Single Page Application (SPA) that provides financial stock details.
 <a href="#usage">Usage</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 <a href="#app">App</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 <a href="#with">Building</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#tests">Testing</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 <a href="#author">Author</a>
 
 ## Background <a name = "about"></a>
 
-The application herein was developed as per [Microverse Inc.]() specificifications. The main task was to use `create-react-app` and build and a single page application that displays a catalogue of items received from an API of choice. This application consumes the [Financial Modelling Prep API] to gather information on real time stocks which are displayed in React components. Redux was used to centrally manage the application state. To enhance the browsing of stocks, filters were added. 
+The application herein was developed as per [Microverse Inc.](https://www.microverse.org/) specificifications. The main task was to use `create-react-app` and build a single page application that displays a catalogue of items received from an API of choice. This application consumes the [Financial Modelling Prep API](https://financialmodelingprep.com/developer/docs/) to gather information on real time stocks which are displayed in React components. Redux was used to centrally manage the application state. To enhance the browsing of stocks, filters were added. 
+
+## Live Demo
+
+The app is deployed and live demo link is [👉Here](https://stockscatalogue.netlify.app/)
 
 ## 🔧 Building<a name = "with"></a>
 
@@ -33,6 +40,7 @@ The tools used to build the application are listed below:
 - Redux
 - eslint
 - stylelint
+- react-bootstrap
 
 ## Usage <a name = "usage"></a>
 
@@ -40,7 +48,7 @@ To use the code in this repository, follow the steps in this section:
 
 ### 🔨 Prerequisites
 
-You should have the following packages installed on your computer inorder to run the code contained herein.
+You need to have the following packages installed on your computer
 
 - Node JS
 - npm and npx
@@ -67,6 +75,12 @@ With the installations above complete, you are set to locally use the code. Foll
 - Run `npm start` to start webpack-dev-server.
 - If everything worked well, the browser should automatically render the application on `http://localhost:3000/`.
 
+## 🧪 Testing <a name= "tests"></a>
+
+Jest and React Testing Library were used to test the code herein.
+To run the tests, simply type:
+- `npm test` or `npm run test` in the terminal and hit enter. This will run the npm test script
+
 ## ✒️ Author <a name = "author"></a>
 
 👤 **Mworekwa Ezekiel**
@@ -80,7 +94,7 @@ With the installations above complete, you are set to locally use the code. Foll
 
 Contributions, issues and feature requests are welcome!
 
-- To create an issue, visit the [issues page](https://github.com/vanheaven-ui/React-calc/issues) and create a new issue.
+- To create an issue, visit the [issues page](https://github.com/vanheaven-ui/stocks-catalogue/issues) and create a new issue.
 - To contribute to the code base, follow the steps below:
   1. Fork this repository to your remote respository by clicking the Fork button in this repository.(optional)
   2. Clone this repository to a directory on your computer by following Github guidelines.
