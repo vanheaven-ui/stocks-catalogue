@@ -3,11 +3,6 @@
 exports[`StockDetails Container component doesnot change unexpectedly 1`] = `
 <section
   className="stockDetails"
-  style={
-    Object {
-      "color": "#fff",
-    }
-  }
 >
   <div
     className="container"

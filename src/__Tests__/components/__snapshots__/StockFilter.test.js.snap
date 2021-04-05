@@ -3,12 +3,6 @@
 exports[`StockFilter container component doesnot change unexpectedly 1`] = `
 <section
   className="filters"
-  style={
-    Object {
-      "backgroundColor": "#ffcd0a",
-      "color": "#d1450d",
-    }
-  }
 >
   <h2>
     Browse Stocks with Filters:
@@ -30,7 +24,7 @@ exports[`StockFilter container component doesnot change unexpectedly 1`] = `
         <select
           name="PRICE"
           onChange={[Function]}
-          value="All"
+          value=""
         >
           <option
             value="default"
@@ -73,7 +67,7 @@ exports[`StockFilter container component doesnot change unexpectedly 1`] = `
         <select
           name="EXCHANGE"
           onChange={[Function]}
-          value="All"
+          value=""
         >
           <option
             value="default"

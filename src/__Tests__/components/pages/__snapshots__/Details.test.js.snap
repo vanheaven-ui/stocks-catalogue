@@ -3,11 +3,6 @@
 exports[`Details page doesnot change unexpectedly 1`] = `
 <section
   className="stockDetails"
-  style={
-    Object {
-      "color": "#fff",
-    }
-  }
 >
   <div
     className="container"
