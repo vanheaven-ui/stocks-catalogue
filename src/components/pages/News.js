@@ -12,13 +12,13 @@ const News = () => {
     dispatch(getNews(data));
   }
 
-  const news = useSelector(state => state.stocks.news);
+  const news = useSelector((state) => state.stocks.news);
   return (
     <section className="news">
       { isLoading && <Loading color="green" /> }
       { !isLoading && news.length > 0 && (
         <Container style={{ backgroundColor: '#fff', textAlign: 'center' }}>
-          {news && news.map(item => (
+          {news && news.map((item) => (
             <article className="news-article" key={item.url}>
               <header>
                 { item.title && (

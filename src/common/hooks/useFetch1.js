@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const useFetch1 = url => {
+const useFetch1 = (url) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -14,12 +14,12 @@ const useFetch1 = url => {
       },
       signal: abortCont.abort(),
     })
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         setData(data);
         setIsLoading(false);
       })
-      .catch(err => {
+      .catch((err) => {
         const alert = document.createElement('div');
         alert.innerHTML = err.message;
         alert.classList.add('my-alert');

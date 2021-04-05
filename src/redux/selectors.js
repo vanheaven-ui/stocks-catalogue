@@ -1,5 +1,5 @@
 const getStocksByPrice = (stocks, priceRange) => {
-  const filteredStockPrice = stocks ? (stocks.filter(stock => {
+  const filteredStockPrice = stocks ? (stocks.filter((stock) => {
     switch (priceRange) {
       case '<100':
         return stock.price < 100;
@@ -22,7 +22,7 @@ const getStocksByPrice = (stocks, priceRange) => {
 };
 
 const filterByExchange = (stocks, exchange) => {
-  const filteredStocks = stocks ? (stocks.filter(stock => {
+  const filteredStocks = stocks ? (stocks.filter((stock) => {
     switch (exchange) {
       case 'New York Stock Exchange Arca':
         return stock.exchange === 'New York Stock Exchange Arca';

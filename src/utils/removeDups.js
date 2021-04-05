@@ -1,3 +1,3 @@
-const removeDups = array => [...new Set(array)];
+const removeDups = (array) => [...new Set(array)];
 
 export default removeDups;
