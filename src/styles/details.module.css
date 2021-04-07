@@ -62,3 +62,14 @@
   box-shadow: 1px 2px 3px blueviolet;
   padding: 0 16px;
 }
+
+@media screen and (max-with: 575px) {
+  .coHeader {
+    display: flex;
+    flex-direction: column;
+  }
+
+  header h2 {
+    margin: 0;
+  }
+}

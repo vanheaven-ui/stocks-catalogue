@@ -6,7 +6,11 @@ const IntroAlert = () => {
   return (
     <>
       { show && (
-      <Alert variant="primary" onClose={() => setShow(false)} dismissible>
+      <Alert
+        variant="primary"
+        onClose={() => setShow(false)}
+        dismissible
+      >
         <Alert.Heading id="heading">
           <span role="img" aria-labelledby="heading">👋</span>
           Hey!, Welcome to stocks catalogue
