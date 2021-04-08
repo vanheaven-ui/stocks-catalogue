@@ -70,6 +70,10 @@
     text-align: center;
   }
 
+  .coHeader h2 {
+    margin-left: 0;
+  }
+
   .aboutCo h3 {
     text-align: center;
   }
