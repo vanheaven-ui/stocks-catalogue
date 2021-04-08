@@ -63,13 +63,14 @@
   padding: 0 16px;
 }
 
-@media screen and (max-with: 575px) {
+@media screen and (max-width: 575px) {
   .coHeader {
-    display: flex;
-    flex-direction: column;
+    display: block;
+    width: 100%;
+    text-align: center;
   }
 
-  header h2 {
-    margin: 0;
+  .aboutCo h3 {
+    text-align: center;
   }
 }
