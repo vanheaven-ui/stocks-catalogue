@@ -3,10 +3,10 @@ import Container from 'react-bootstrap/Container';
 import { Col, Row } from 'react-bootstrap';
 import { useState } from 'react';
 import ReactPaginate from 'react-paginate';
-import { changeFilter } from '../redux/actions'; // , getStockList
+import { changeFilter, getStockList } from '../redux/actions';
 import StocksFilter from '../components/StockFilter';
-// import useFetch1 from '../common/hooks/useFetch1';
-import STOCKS_FILTERS from '../constants'; // ,  { listEndPoint }
+import useFetch1 from '../common/hooks/useFetch1';
+import STOCKS_FILTERS, { listEndPoint } from '../constants';
 import { filterByExchange, getStocksByPrice } from '../redux/selectors';
 import Stock from '../components/Stock';
 import styles from '../styles/paginate.module.css';
@@ -26,16 +26,13 @@ const StockList = () => {
     exchange: null,
   });
 
-  const isLoading = false;
-  // const { data, isLoading } = useFetch1(listEndPoint);
+  const { data, isLoading } = useFetch1(listEndPoint);
 
-  // if (data.length > 0) {
-  //   localStorage.setItem('stocks', JSON.stringify(data));
-  //   dispatch(getStockList(data));
-  // }
+  if (data.length > 0) {
+    dispatch(getStockList(data));
+  }
 
-  // const stocks = useSelector((state) => state.stocks.stocks);
-  const stocks = JSON.parse(localStorage.getItem('stocks'));
+  const stocks = useSelector((state) => state.stocks.stocks);
 
   const exchanges = stocks ? stocks.slice(0, 1000).map((stock) => stock.exchange) : null;
   STOCKS_FILTERS.EXCHANGE = exchanges;
