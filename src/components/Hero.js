@@ -1,11 +1,12 @@
 import { Card } from 'react-bootstrap';
 import hero from '../images/hero.jpg';
+import styles from '../styles/hero.module.css';
 
 const Hero = () => (
-  <Card className="bg-dark text-white" style={{ height: 200 }}>
+  <Card className="bg-dark text-white">
     <Card.Img src={hero} alt="Card image" />
     <Card.ImgOverlay>
-      <Card.Title style={{ fontSize: 48, textShadow: '3px 2px black' }}>
+      <Card.Title className={styles.cTitle}>
         INFORMATION FOR YOUR
         <br />
         NEXT STOCKS INVESTMENT

@@ -9,23 +9,23 @@ const StocksFilter = ({ handleChange, handleSubmit, chosenValue }) => (
     <Container>
       <form onSubmit={(e) => handleSubmit(e)} style={{ textAlign: 'center' }}>
         <div className="filters">
-              { Object.keys(STOCKS_FILTERS).map(key => ( // eslint-disable-line
-                <select
-                  value={chosenValue}
-                  onChange={(e) => handleChange(e)}
-                  key={key}
-                  name={key}
-                >
-                  <option value="default">
-                    Select:
-                    {' '}
-                    {key === 'PRICE' ? `${key} RANGE` : key}
-                  </option>
-                  {STOCKS_FILTERS[key].map((filter) => (
-                    <option value={filter} key={`stck-${filter}`}>{filter}</option>
-                  ))}
-                </select>
+          { Object.keys(STOCKS_FILTERS).map((key) => (
+            <select
+              value={chosenValue}
+              onChange={(e) => handleChange(e)}
+              key={key}
+              name={key}
+            >
+              <option value="default">
+                Select:
+                {' '}
+                {key === 'PRICE' ? `${key} RANGE` : key}
+              </option>
+              {STOCKS_FILTERS[key].map((filter) => (
+                <option value={filter} key={`stck-${filter}`}>{filter}</option>
               ))}
+            </select>
+          ))}
           <button type="submit">Apply</button>
         </div>
       </form>
