@@ -12,6 +12,10 @@
   padding: 20px;
 }
 
+.coHeader h2 {
+  margin-left: 20px;
+}
+
 .aboutCo {
   background-color: #fff;
   padding: 10px 20px;
@@ -72,6 +76,7 @@
 
   .coHeader h2 {
     margin-left: 0;
+    margin-top: 10px;
   }
 
   .aboutCo h3 {

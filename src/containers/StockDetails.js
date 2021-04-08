@@ -27,7 +27,7 @@ const StockDetails = () => {
                 </Badge>
                 { data[0].companyName
                 && (
-                <h2 style={{ marginLeft: 20 }}>
+                <h2>
                   {data[0].companyName}
                 </h2>
                 )}
