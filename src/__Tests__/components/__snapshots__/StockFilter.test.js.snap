@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StockFilter container component doesnot change unexpectedly 1`] = `
+<section
+  className="filters"
+>
+  <h2>
+    Browse Stocks with Filters:
+  </h2>
+  <div
+    className="container"
+  >
+    <form
+      onSubmit={[Function]}
+      style={
+        Object {
+          "textAlign": "center",
+        }
+      }
+    >
+      <div
+        className="filters"
+      >
+        <select
+          name="PRICE"
+          onChange={[Function]}
+          value=""
+        >
+          <option
+            value="default"
+          >
+            Select:
+             
+            PRICE RANGE
+          </option>
+          <option
+            value="<100"
+          >
+            &lt;100
+          </option>
+          <option
+            value="100 < Price < 200"
+          >
+            100 &lt; Price &lt; 200
+          </option>
+          <option
+            value="200 < Price < 300"
+          >
+            200 &lt; Price &lt; 300
+          </option>
+          <option
+            value="300 < Price < 400"
+          >
+            300 &lt; Price &lt; 400
+          </option>
+          <option
+            value="400 < Price < 500"
+          >
+            400 &lt; Price &lt; 500
+          </option>
+          <option
+            value=">500"
+          >
+            &gt;500
+          </option>
+        </select>
+        <select
+          name="EXCHANGE"
+          onChange={[Function]}
+          value=""
+        >
+          <option
+            value="default"
+          >
+            Select:
+             
+            EXCHANGE
+          </option>
+        </select>
+        <button
+          type="submit"
+        >
+          Apply
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+`;

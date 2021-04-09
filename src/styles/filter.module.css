@@ -1,0 +1,26 @@
+.filters {
+  padding: 16px 20px;
+  background-color: #ffcd0a;
+  color: #d1450d;
+}
+
+.filters select {
+  margin-right: 16px;
+  border-radius: 5px;
+}
+
+.filters button {
+  background-color: #d1450d;
+  color: #f1f1e2;
+  outline: none;
+  padding: 2px 12px;
+  transition: all 0.5s linear;
+  border-radius: 10px;
+  border: 1px solid #fff;
+}
+
+.filters button:hover {
+  background-color: #fff;
+  color: #d1450d;
+  border: 1px solid #d1450d;
+}

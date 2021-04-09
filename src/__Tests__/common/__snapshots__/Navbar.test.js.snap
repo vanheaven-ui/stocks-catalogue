@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar component doesnot change unexpectedly 1`] = `
+<nav
+  className="navbar sticky-top mb-2"
+  style={
+    Object {
+      "color": "#007bff",
+    }
+  }
+>
+  <h2>
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+      <img
+        alt="my logo"
+        src="logo.jpeg"
+        style={
+          Object {
+            "height": 60,
+            "marginRight": 5,
+            "width": 60,
+          }
+        }
+      />
+      StocksCatalogue
+    </a>
+  </h2>
+  <div
+    className="links"
+  >
+    <a
+      href="/"
+      onClick={[Function]}
+      style={
+        Object {
+          "margin": "0 10px 0 0",
+        }
+      }
+    >
+      Home
+    </a>
+    <a
+      href="/news"
+      onClick={[Function]}
+    >
+      StockNews
+    </a>
+  </div>
+</nav>
+`;

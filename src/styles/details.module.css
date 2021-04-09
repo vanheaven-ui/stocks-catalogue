@@ -1,0 +1,85 @@
+.stockDetails {
+  color: #fff;
+}
+
+.coHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  margin: 0 auto 16px;
+  border-bottom: 3px dotted #d1450d;
+  padding: 20px;
+}
+
+.coHeader h2 {
+  margin-left: 20px;
+}
+
+.aboutCo {
+  background-color: #fff;
+  padding: 10px 20px;
+  color: purple;
+  border-radius: 5px;
+}
+
+.stckHdr {
+  padding: 5px 10px;
+  border-bottom: 3px dotted #d1450d;
+}
+
+.price {
+  border-radius: 50%;
+  border: 1px solid #fff;
+  height: 150px;
+  background-color: orange;
+  font-weight: 900;
+  text-align: center;
+  align-items: center;
+  line-height: 60px;
+  display: flex;
+}
+
+.priceDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stckDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.stckDetails h4 {
+  border-bottom: 3px double black;
+  padding: 8px 12px;
+}
+
+.stckDetails > h5 {
+  box-shadow: -1px 2px 3px black;
+  padding: 0 16px;
+}
+
+.quotas > h5 {
+  box-shadow: 1px 2px 3px blueviolet;
+  padding: 0 16px;
+}
+
+@media screen and (max-width: 575px) {
+  .coHeader {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .coHeader h2 {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .aboutCo h3 {
+    text-align: center;
+  }
+}

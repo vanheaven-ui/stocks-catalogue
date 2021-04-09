@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Stock component doesnot change unexpectedly 1`] = `
+Array [
+  <div
+    className="company-preview"
+  >
+    <h2>
+      SPDR S&P 500
+    </h2>
+    <h2>
+      <span
+        className="badge badge-primary"
+      >
+        SPY
+      </span>
+    </h2>
+  </div>,
+  <hr />,
+  <div
+    className="stock-stats"
+  >
+    <h2>
+      Price:
+       
+      395.98
+    </h2>
+  </div>,
+  <div
+    className="stockFooter"
+  >
+    <button
+      className="btn btn-outline-primary"
+      disabled={false}
+      style={
+        Object {
+          "backgroundColor": "#007bff",
+        }
+      }
+      type="button"
+    >
+      <a
+        href="/stocks/SPY"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#fff",
+          }
+        }
+      >
+        Details
+      </a>
+    </button>
+    <div
+      className="exchange"
+    >
+      <small
+        style={
+          Object {
+            "color": "#d1450d",
+          }
+        }
+      >
+        Trading on:
+      </small>
+      <h6>
+        New York Stock Exchange Arca
+      </h6>
+    </div>
+  </div>,
+]
+`;

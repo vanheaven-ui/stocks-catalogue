@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StockDetails Container component doesnot change unexpectedly 1`] = `
+<section
+  className="stockDetails"
+>
+  <div
+    className="container"
+  />
+</section>
+`;

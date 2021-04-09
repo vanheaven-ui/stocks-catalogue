@@ -1,16 +1,18 @@
 <div align="center">
 
-# Create React App
+# Stocks Catalogue
 
-A React scaffold with basic linter and Github actions configuration.
+A Single Page Application (SPA) that provides financial stock details.
 
-![Linters](https://img.shields.io/badge/%E2%9C%94%EF%B8%8FLinting-Yes-ff69b4)
+[![Github Issues](https://img.shields.io/badge/GitHub-Issues-orange)](https://github.com/vanheaven-ui/stocks-catalogue/issues)
+[![GitHub Pull Requests](https://img.shields.io/badge/GitHub-Pull%20Requests-blue)](https://github.com/vanheaven-ui/stocks-catalogue/pulls)
+![Linters](https://img.shields.io/badge/Linters-pass-brightgreen)
 
 </div>
 
 ## Application Screenshot
 
-# This is space for your application screenshot
+![Screenshot](screenshot/screenshot.gif)
 
 ## Content
 
@@ -19,19 +21,26 @@ A React scaffold with basic linter and Github actions configuration.
 <a href="#usage">Usage</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 <a href="#app">App</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 <a href="#with">Building</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#tests">Testing</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 <a href="#author">Author</a>
 
 ## Background <a name = "about"></a>
 
-This template was created to eliminate the time it takes to scaffold a React application from the `npx create-react-app [App name]`. More so, instead of spending time configuring linters, this repository contains the basic linters to help keep your CSS and Javascript code in check. 
+The application herein was developed as per [Microverse Inc.](https://www.microverse.org/) specificifications. The main task was to use `create-react-app` and build a single page application that displays a catalogue of items received from an API of choice. This application consumes the [Financial Modelling Prep API](https://financialmodelingprep.com/developer/docs/) to gather information on real time stocks which are displayed in React components. Redux was used to centrally manage the application state. To enhance the browsing of stocks, filters were added. 
+
+## Live Demo
+
+The app is deployed and live demo link is [👉Here](https://stockscatalogue.netlify.app/)
 
 ## 🔧 Building<a name = "with"></a>
 
-The tools used to build the template are listed below:
+The tools used to build the application are listed below:
 
 - React
+- Redux
 - eslint
 - stylelint
+- react-bootstrap
 
 ## Usage <a name = "usage"></a>
 
@@ -39,14 +48,14 @@ To use the code in this repository, follow the steps in this section:
 
 ### 🔨 Prerequisites
 
-You should have the following packages installed on your computer inorder to run the code contained herein.
+You need to have the following packages installed on your computer
 
 - Node JS
 - npm and npx
 
 ### 🔨 Setup
 
-First get a copy of the project on your computer:
+To get a copy of the project on your computer:
 
 - Clone or download the repository to a local directory on your computer by following the Github instructions at [Github clone/download repository](https://docs.github.com/en/enterprise/2.13/user/articles/cloning-a-repository).
 
@@ -59,13 +68,18 @@ Once you have a local copy of the entire project on your computer, then:
 - Open the project directory in your editor of choice. For example running `code .` will open the project in VSCode.
 - Run `npm install` to install the project dependencies in the package.json file.
 
-### Template <a name = "app"></a>
+### Application <a name = "app"></a>
 
 With the installations above complete, you are set to locally use the code. Follow these simple steps:
 
 - Run `npm start` to start webpack-dev-server.
-- If everything worked well, the browser should automatically render the calculator on `http://localhost:3000/`.
-- Now you can get building your application without waiting for ages for `create-react-app` to install all the packages.
+- If everything worked well, the browser should automatically render the application on `http://localhost:3000/`.
+
+## 🧪 Testing <a name= "tests"></a>
+
+Jest and React Testing Library were used to test the code herein.
+To run the tests, simply type:
+- `npm test` or `npm run test` in the terminal and hit enter. This will run the npm test script
 
 ## ✒️ Author <a name = "author"></a>
 
@@ -80,9 +94,9 @@ With the installations above complete, you are set to locally use the code. Foll
 
 Contributions, issues and feature requests are welcome!
 
-- To create an issue, visit the [issues page](https://github.com/vanheaven-ui/React-calc/issues) and create a new issue.
+- To create an issue, visit the [issues page](https://github.com/vanheaven-ui/stocks-catalogue/issues) and create a new issue.
 - To contribute to the code base, follow the steps below:
-  1. Fork this repository to your remote respository by clicking the Fork button in this repository.
+  1. Fork this repository to your remote respository by clicking the Fork button in this repository.(optional)
   2. Clone this repository to a directory on your computer by following Github guidelines.
   3. Change directory into the directory where you cloned this repository to.
   4. Open the directory using your favorite editor.

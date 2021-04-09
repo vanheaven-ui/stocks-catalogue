@@ -1,0 +1,28 @@
+.hRow {
+  height: 362px;
+}
+
+.cTitle {
+  font-size: 48px;
+  text-shadow: 3px 2px black;
+}
+
+@media screen and (max-width: 768px) {
+  .hRow {
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .cTitle {
+    font-size: 24px;
+  }
+
+  .pOffset {
+    padding: 0;
+  }
+
+  .marginB {
+    margin-bottom: 24px;
+  }
+}
