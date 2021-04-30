@@ -30,7 +30,7 @@ The application herein was developed as per [Microverse Inc.](https://www.microv
 
 ## Live Demo
 
-The app is deployed and live demo link is [👉Here](https://stockscatalogue.netlify.app/)
+The app is deployed and live demo link is [👉Here](https://vanheaven-stocks.herokuapp.com/)
 
 ## 🔧 Building<a name = "with"></a>
 
